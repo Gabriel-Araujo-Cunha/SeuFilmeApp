@@ -33,9 +33,6 @@ export function Filmes() {
     // Array de dependências vazio = roda apenas uma vez (componentDidMount)
   }, []);
 
-  // Exibe no console os filmes carregados (útil para debug)
-  console.log("Filmes carregados:", filmes);
-
   return (
     <div className="slider">
       {filmes.map((filme) => (

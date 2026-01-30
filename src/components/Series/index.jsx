@@ -33,9 +33,6 @@ export function Serie() {
     // Array de dependências vazio = roda apenas uma vez (componentDidMount)
   }, []);
 
-  // Exibe no console as séries carregadas (útil para debug)
-  console.log("Séries carregadas:", series);
-
   return (
     <div className="slider">
       {series.map((serie) => (
