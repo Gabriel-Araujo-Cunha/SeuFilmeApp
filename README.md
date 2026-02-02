@@ -1,16 +1,44 @@
-# React + Vite
+# 🎬 SeuFilmeApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida em **React** que consome a API do **The Movie Database (TMDB)** para exibir filmes e séries populares em um layout inspirado em plataformas de streaming.
 
-Currently, two official plugins are available:
+O projeto foi criado com foco em aprendizado, boas práticas e evolução em React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🛠️ Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ⚛️ React
+- 📦 Vite
+- 🌐 Axios
+- 🎨 CSS
+- 🔗 TMDB API
+- 💡 JavaScript (ES6+)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Funcionalidades
+
+✅ Listagem de filmes populares  
+✅ Listagem de séries populares  
+✅ Carrossel horizontal com navegação  
+✅ Scroll suave  
+✅ Layout responsivo  
+✅ Header fixo com navegação interna  
+✅ Nota dos filmes no hover  
+✅ Interface centralizada e organizada  
+
+---
+
+## 📚 Conceitos Trabalhados
+
+- Componentização
+- Props
+- Hooks (`useState`, `useEffect`, `useRef`)
+- Consumo de API REST
+- Separação de responsabilidades
+- Reutilização de componentes
+- Layout responsivo
+- Boas práticas em React
+
+---

@@ -6,7 +6,6 @@ import { Serie } from "./components/Series";
 import { Carrosel } from "./components/Carrossel";
 
 const App = () => {
-
   const [popularMovies, setPopularMovies] = useState([]);
   const [popularSeries, setPopularSeries] = useState([]);
 
@@ -15,13 +14,18 @@ const App = () => {
       <header>
         <Header />
       </header>
-      <main>
-        <SubTitle>Filmes Populares</SubTitle>
-        <Filmes onLoaded={setPopularMovies} />
-        <Carrosel items={popularMovies}/>
-        <SubTitle>Séries Populares</SubTitle>
-        <Serie onLoaded={setPopularSeries} />
-        <Carrosel items={popularSeries}/>
+      <main className="container">
+        <section id="filmes" className="section-block">
+          <SubTitle>Filmes Populares</SubTitle>
+          <Filmes onLoaded={setPopularMovies} />
+          <Carrosel items={popularMovies} />
+        </section>
+
+        <section id="series" className="section-block">
+          <SubTitle>Séries Populares</SubTitle>
+          <Serie onLoaded={setPopularSeries} />
+          <Carrosel items={popularSeries} />
+        </section>
       </main>
     </>
   );
