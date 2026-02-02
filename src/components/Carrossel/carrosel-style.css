@@ -1,0 +1,70 @@
+.carrosel-section {
+  margin: 32px 0;
+}
+
+.carrosel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.carrosel-header h2 {
+  color: #fff;
+}
+
+.see-all {
+  color: #3ea6ff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.carrosel-wrapper {
+  position: relative;
+}
+
+.carrosel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 8px 0;
+}
+
+.carrosel::-webkit-scrollbar {
+  display: none;
+}
+
+.carrosel img {
+  width: 180px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.carrosel img:hover {
+  transform: scale(1.08);
+}
+
+/* Botões */
+
+.nav-btn {
+  position: absolute;
+  top: 40%;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  color: white;
+  font-size: 32px;
+  width: 40px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav-btn.left {
+  left: 0;
+}
+
+.nav-btn.right {
+  right: 0;
+}
