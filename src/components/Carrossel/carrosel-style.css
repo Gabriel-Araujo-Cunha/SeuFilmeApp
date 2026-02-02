@@ -1,70 +1,104 @@
-.carrosel-section {
-  margin: 32px 0;
-}
 
-.carrosel-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.carrosel-header h2 {
-  color: #fff;
-}
-
-.see-all {
-  color: #3ea6ff;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.carrosel-wrapper {
+.carrossel {
+  margin: 24px 0;
   position: relative;
 }
 
-.carrosel {
+.carrossel__header {
   display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 8px 0;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
 
-.carrosel::-webkit-scrollbar {
+.carrossel__title {
+  color: #fff;
+  font-size: 20px;
+}
+
+.carrossel__track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.carrossel__track::-webkit-scrollbar {
   display: none;
 }
 
-.carrosel img {
-  width: 180px;
-  border-radius: 8px;
-  transition: transform 0.3s;
-  cursor: pointer;
+.carrossel__card {
+  flex: 0 0 auto;
+  width: 160px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.carrosel img:hover {
-  transform: scale(1.08);
+.carrossel__img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
 }
 
-/* Botões */
-
-.nav-btn {
+.carrossel__btn {
   position: absolute;
-  top: 40%;
+  top: 55%;
+  transform: translateY(-50%);
   background: rgba(0,0,0,0.7);
   border: none;
   color: white;
   font-size: 32px;
   width: 40px;
-  height: 60px;
+  height: 70px;
   cursor: pointer;
   z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-.nav-btn.left {
+.carrossel:hover .carrossel__btn {
+  opacity: 1;
+}
+
+.carrossel__btn.left {
   left: 0;
 }
 
-.nav-btn.right {
+.carrossel__btn.right {
   right: 0;
+}
+
+.carrossel__card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.carrossel__card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  z-index: 2;
+}
+
+.carrossel__rating {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffd700;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0;              
+  transform: translateY(6px); 
+  transition: all 0.3s ease;
+  pointer-events: none; 
+}
+
+.carrossel__card:hover .carrossel__rating {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
 }

@@ -1,48 +1,60 @@
-import { useRef } from "react";
 import "./carrosel-style.css";
+import { useRef } from "react";
 
-export function Carrosel({ title, movies }) {
-  const carroselRef = useRef(null);
+export function Carrosel({ title, items = [] }) {
+  const trackRef = useRef();
 
   const scrollLeft = () => {
-    carroselRef.current.scrollBy({
-      left: -600,
+    trackRef.current.scrollBy({
+      left: -500,
       behavior: "smooth",
     });
   };
 
   const scrollRight = () => {
-    carroselRef.current.scrollBy({
-      left: 600,
+    trackRef.current.scrollBy({
+      left: 500,
       behavior: "smooth",
     });
   };
 
+  if (!items.length) {
+    return (
+      <section className="carrossel">
+        <h2 className="carrossel__title">{title}</h2>
+        <p style={{ color: "white" }}>Carregando...</p>
+      </section>
+    );
+  }
+
   return (
-    <section className="carrosel-section">
-      <div className="carrosel-header">
-        <h2>{title}</h2>
-        <span className="see-all">Ver todos</span>
-      </div>
+    <section className="carrossel">
+      <h2 className="carrossel__title">{title}</h2>
 
-      <div className="carrosel-wrapper">
-        <button onClick={scrollLeft} className="nav-btn left">
-          ‹
-        </button>
+      <button className="carrossel__btn left" onClick={scrollLeft}>
+        ‹
+      </button>
 
-        <div className="carrosel" ref={carroselRef}>
-          {movies.map((movie) => (
+      <button className="carrossel__btn right" onClick={scrollRight}>
+        ›
+      </button>
+
+      <div className="carrossel__track" ref={trackRef}>
+        {items.map((item) => (
+          <article className="carrossel__card" key={item.id}>
+
+            <span className="carrossel__rating">
+              ⭐ {item.vote_average.toFixed(1)}
+            </span>
+
             <img
-              key={movie.id}
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
+              className="carrossel__img"
+              src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
+              alt={item.title || item.name}
+              loading="lazy"
             />
-          ))}
-        </div>
-
-        <button onClick={scrollRight} className="nav-btn right">
-          ›
-        </button>
+          </article>
+        ))}
       </div>
     </section>
   );

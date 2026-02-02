@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Header } from "./components/Header";
 import { SubTitle } from "./components/SubTitle";
 import { Filmes } from "./components/Filmes";
@@ -7,16 +7,21 @@ import { Carrosel } from "./components/Carrossel";
 
 const App = () => {
 
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [popularSeries, setPopularSeries] = useState([]);
+
   return (
     <>
       <header>
         <Header />
       </header>
       <main>
-        <SubTitle>Filmes</SubTitle>
-        <Filmes />
-        <SubTitle>Séries</SubTitle>
-        <Serie />
+        <SubTitle>Filmes Populares</SubTitle>
+        <Filmes onLoaded={setPopularMovies} />
+        <Carrosel items={popularMovies}/>
+        <SubTitle>Séries Populares</SubTitle>
+        <Serie onLoaded={setPopularSeries} />
+        <Carrosel items={popularSeries}/>
       </main>
     </>
   );
